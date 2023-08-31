@@ -1,0 +1,54 @@
+.card {
+  box-sizing: border-box;
+  width: calc(20% - 16px);
+  min-width: 250px;
+  height: 400px;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgb(199, 199, 199);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.info {
+  font-size: 16px;
+}
+.link {
+  display: block;
+  color: black;
+}
+
+.title {
+  line-height: 28px;
+}
+.title:hover {
+  color: rgb(0, 0, 192);
+}
+.info div {
+  margin: 0 0 4px 0;
+}
+.info .price {
+  font-size: 24px;
+  font-weight: 600;
+  color: red;
+  margin: 6px 0 10px 0;
+}
+.img_container {
+  margin: 0 auto;
+}
+img {
+  height: 200px;
+  object-fit: cover;
+  width: 200px;
+}
+
+.category {
+  color: rgb(124, 124, 124);
+  font-size: 80%;
+}
+
+.rating {
+  color: rgb(124, 124, 124);
+}
