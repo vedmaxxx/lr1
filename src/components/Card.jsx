@@ -1,35 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Card.module.css";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className={classes.card}>
-      {/* <a href="" className={classes.img_holder}>
-        <div className={classes.img}>
-          <img
-            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-            alt=""
-          />
-        </div>
-      </a> */}
       <div className="img_container">
-        <img
-          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          alt=""
-        />
+        <img src={props.image} alt="" />
       </div>
 
       <div className={classes.info}>
         <a href="" className={`${classes.price} ${classes.link}`}>
-          7.999 &#8381;
+          ${props.price}
         </a>
         <a href="" className={`${classes.title} ${classes.link}`}>
-          Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+          {props.title}
         </a>
-        {/* <div className={classes.description}>Описание</div> */}
-        <div className={classes.category}>Категория</div>
-        <div className={classes.rating}>Рейтинг: оценка, кол-во оценок</div>
+        <div href="" className={classes.description}>
+          Описание
+          <div className={classes.description_on}>{props.description}</div>
+        </div>
+        <a href="" className={classes.category}>
+          {props.category}
+        </a>
+        <div className={classes.rating}>
+          {props.rating.rate}, {props.rating.count}
+        </div>
       </div>
+      <button
+        className={classes.delete}
+        onClick={() => {
+          props.deleteProduct(props.id);
+        }}
+      >
+        Удалить
+      </button>
     </div>
   );
 };
