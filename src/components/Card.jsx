@@ -23,7 +23,7 @@ const Card = (props) => {
           {props.category}
         </a>
         <div className={classes.rating}>
-          {props.rating.rate}, {props.rating.count}
+          {props.rating?.rate},{props.rating?.count}
         </div>
       </div>
       <button

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import classes from "./AppendProduct.module.css";
 
 const AppendProduct = ({ appendProduct }) => {
-  console.log("отрабатывает AppendProduct");
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
-  const [image, setImage] = useState("");
+  const [title, setTitle] = useState("новый элемент");
+  const [price, setPrice] = useState(" ");
+  const [description, setDescription] = useState(" ");
+  const [category, setCategory] = useState(" ");
+  const [image, setImage] = useState(" ");
 
   const addNewProduct = (event) => {
     event.preventDefault();
@@ -22,12 +22,13 @@ const AppendProduct = ({ appendProduct }) => {
         count: 0,
       },
     };
+    appendProduct(newProduct);
   };
 
   return (
     <div>
       {""}
-      <form onSubmit={appendProduct}>
+      <form onSubmit={addNewProduct} className={classes.form}>
         <div>
           title
           <input
